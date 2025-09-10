@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>좋아요 의견 입력 안내</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    .chat-input {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 400px;
+    }
+
+    .guide {
+      font-size: 13px;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    }
+
+    .actions {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-input">
+    <div id="guideText" class="guide">궁금한 내용을 입력하세요</div>
+    <input type="text" id="message" placeholder="메시지를 입력하세요" />
+  </div>
+
+  <div class="actions">
+    <button id="likeBtn">👍 좋아요</button>
+  </div>
+
+  <script>
+    const guideText = document.getElementById("guideText");
+    const likeBtn = document.getElementById("likeBtn");
+    const input = document.getElementById("message");
+
+    likeBtn.addEventListener("click", () => {
+      guideText.textContent = "좋아요 의견을 남겨주세요";
+      input.focus();
+    });
+  </script>
+</body>
+</html>
